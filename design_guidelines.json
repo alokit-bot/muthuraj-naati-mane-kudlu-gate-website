@@ -1,0 +1,130 @@
+{
+  "theme": "Dark Theme (Premium, Warm & Luxury Archetype)",
+  "typography": {
+    "fonts": {
+      "headings": "'Playfair Display', serif",
+      "body": "'Manrope', sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white",
+      "h2": "text-4xl sm:text-5xl font-semibold tracking-tight text-white",
+      "h3": "text-2xl sm:text-3xl font-medium text-white/90",
+      "body": "text-base sm:text-lg text-white/70 leading-relaxed",
+      "labels": "text-xs font-bold tracking-[0.2em] uppercase text-[#E76F51]"
+    },
+    "pairing_archetype": "The Old Money Tech / Fine Dining (Classic Serif Head + Clean Sans Body)"
+  },
+  "colors": {
+    "background": {
+      "primary": "#0A0A0A",
+      "secondary": "#121212",
+      "surface": "#1A1A1A"
+    },
+    "foreground": {
+      "primary": "#FFFFFF",
+      "secondary": "rgba(255, 255, 255, 0.7)",
+      "muted": "rgba(255, 255, 255, 0.4)"
+    },
+    "brand": {
+      "primary": "#C84B31",
+      "primary_hover": "#E76F51",
+      "accent": "#F4A261",
+      "accent_muted": "rgba(244, 162, 97, 0.1)"
+    },
+    "contrast_rules": "Maintain WCAG AA (min 4.5:1). Dark backgrounds with off-white text. Primary brand colors (terracotta/orange) used sparingly for CTAs, active states, and borders."
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "glow": "shadow-[0_0_30px_rgba(200,75,49,0.15)]",
+      "ambient": "shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+    },
+    "borders": "1px solid rgba(255,255,255,0.05) or rgba(200,75,49,0.2) for active elements",
+    "glassmorphism": "backdrop-blur-xl bg-black/40 border border-white/5",
+    "overlays": "Hero images must have bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent",
+    "textures": "Subtle grain texture overlay on the main background to prevent flat black spaces"
+  },
+  "component_name": [
+    "HeroSection",
+    "AboutSection",
+    "MenuSection",
+    "PromotionsSection",
+    "TestimonialsSection",
+    "ContactReservationSection",
+    "Footer"
+  ],
+  "grids": {
+    "bento_strategy": "MODE A (The 'Tetris' Grid) for the About & Ambience sections. Asymmetrical 12-column grid. Wide gaps (gap-6 or gap-8).",
+    "menu_grid": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 with gap-8. Menu items shouldn't be enclosed in rigid white cards. Use transparent containers with subtle bottom borders."
+  },
+  "layouts": {
+    "spacing_scale": "Generous Spacing: py-20 lg:py-32 for sections. px-6 lg:px-12 for containers.",
+    "alignment": "Left-align dense text like menu descriptions. Center-align hero and major section headers.",
+    "container": "max-w-7xl mx-auto"
+  },
+  "motion": {
+    "scroll": "Use Framer Motion for smooth, staggered fade-up entrances for menu items.",
+    "hover": "Hovering on menu items slightly translates X (translate-x-2) and changes text color to accent.",
+    "buttons": "Hover states must scale slightly (scale-105) and increase shadow glow."
+  },
+  "accessibility": {
+    "contrast": "Text over images must use explicit text shadows or dark gradients.",
+    "focus": "focus-visible:ring-2 focus-visible:ring-[#F4A261] focus-visible:outline-none",
+    "aria": "All buttons must have aria-labels.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='reservation-submit')."
+  },
+  "media": {
+    "images_handling": "Max 80vh on mobile. Use object-cover for all grid images.",
+    "icons": "Use lucide-react. Stroke width 1.5 for a premium, delicate look."
+  },
+  "3d_libraries": {
+    "usage": "Not strictly necessary for this scope, but a subtle framer-motion parallax on the hero image is recommended to increase perceived value."
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1727404679933-99daa2a7573a",
+      "description": "High-end cinematic shot of an Indian Thali on a dark background, perfect for the hero section."
+    },
+    "about_chef": {
+      "url": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf",
+      "description": "Chef cooking with high flames in a dark, moody kitchen for the About Section."
+    },
+    "menu_south_indian": {
+      "url": "https://images.unsplash.com/photo-1694849789325-914b71ab4075",
+      "description": "Artistic presentation of Dosa on a dark background for the South Indian menu section."
+    },
+    "menu_north_indian": {
+      "url": "https://images.unsplash.com/photo-1563182693-c1c42f4c07cd",
+      "description": "Rich Indian curries on dark background."
+    },
+    "ambiance_1": {
+      "url": "https://images.unsplash.com/photo-1756509365460-44c991071b15",
+      "description": "Warmly lit interior dining setting."
+    },
+    "ambiance_2": {
+      "url": "https://images.unsplash.com/photo-1777791374835-ce880f4279c9",
+      "description": "Lit windows and moody foliage, used to frame ambiance or contact sections."
+    }
+  },
+  "component_path": {
+    "ui": "/app/frontend/src/components/ui"
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: `npm install lucide-react framer-motion sonner` or `yarn add` equivalent.",
+    "Install custom fonts in index.css: `@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300..800&display=swap');`",
+    "Update tailwind.config.js to set font-families (sans -> Manrope, serif -> Playfair Display) and the deep color palette.",
+    "Build a one-page scrolling architecture. The Header should be fixed, using Glassmorphism (backdrop-blur-xl bg-black/50 border-b border-white/5).",
+    "Implement Shadcn Form for the Reservation Inquiry. Customize inputs to fit the dark theme (bg-white/5, border-white/10, text-white, placeholder-white/40).",
+    "Avoid using standard rigid 'Cards' for menu items. Use text-based lists with price dots/dashes, or cardless grids. Menu items should have high-end restaurant typography.",
+    "In the Hero section, overlay the image heavily so 'Muthuraj Naati Mane' and 'Family Dining at Its Best' are completely legible without straining.",
+    "Add 'data-testid' to all buttons, links, and form inputs."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do NOT use generic centered text everywhere. Use alignment to create tension.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Use specific transitions like transition-colors or transition-transform.",
+    "Do not use transparent backgrounds where content scrolls underneath (use backdrop-blur).",
+    "Always apply hover, active, and focus states.",
+    "Never use AI placeholders like emojis 🤖💭 for icons. Strictly use Lucide React icons.",
+    "Never use via.placeholder.com. ONLY use the image URLs provided.",
+    "Ensure padding inside containers prevents text from touching borders."
+  ]
+}
